@@ -45,11 +45,14 @@ $(document).ready(function()
                     console.log(data.photos);
                     
                     var deck = [];
-                    var photos = data.photos;
+                    var all_photos = data.photos.photo;
                     
-                    $.each(photos, function(key, value)
+                    $.each(all_photos, function(key, value)
                     {
-                        console.log(key+": "+value);   
+                        if(key == "id")
+                        {
+                            console.log(value);                               
+                        }
                     });
                 }
             });
