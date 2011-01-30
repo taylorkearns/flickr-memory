@@ -1,0 +1,57 @@
+/* ================================================== 
+html5doctor.com Reset Stylesheet by Richard Clark
+modified by Taylor Kearns www.taylorkearns.com
+================================================== */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video
+{ margin: 0; padding: 0; border: 0; outline: 0; vertical-align: baseline; background: transparent; font-weight: normal; font-style: normal; }
+
+section { display: block; }
+
+nav ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; text-decoration: none; }
+
+    a:active { outline: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+input, select { vertical-align: middle; }
+
+
+
+/* ================================================== 
+Main styles
+================================================== */
+
+body { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+
+div#wrapper { margin: 30px; }
+
+h1 { text-indent: -999em; background: url(/images/heading-flickr-memory.png) no-repeat; width: 428px; height: 69px; }
+
+section#photo-well { float: left; width: 480px; margin-top: 20px; }
+
+#photo-well div.tile { width: 75px; height: 75px; overflow: hidden; position: relative; float: left; margin:0 5px 5px 0; }
+
+#photo-well div.tile img { position: absolute; z-index: 1; }
+
+#photo-well div.mask { position: absolute; z-index: 2; width: 75px; height: 75px; background: #ccc; left: 0; top: 0; }
+
+section#score-card { width: 280px; height: 200px; margin: 20px 0 0 500px; -webkit-box-shadow: 3px 3px 5px #ccc; -moz-box-shadow: 3px 3px 5px #ccc; box-shadow: 3px 3px 5px #ccc; text-align: center; }
+
+#score-card h2 { font-size: 60px; color: #bfbaa9; }
+
+div#tally { font-size: 70px; color: #a68e46; margin-top: 20px; }
+
+section#gallery-selector { margin: 30px 0 0 500px; }
+
+#gallery-selector h2 { font-size: 30px; color: #bfbaa9; }
+
+#gallery-selector ul { margin: 10px 0 0 10px; }
+
+#gallery-selector li { color: #a68e46; list-style: none; }

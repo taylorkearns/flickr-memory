@@ -7,60 +7,37 @@
     
     <title></title>
     
+    <link rel="stylesheet" href="/css/global.css" />
     <link rel="shortcut icon" href="/favicon.ico">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>  
 </head>
 
 <body>
-
-<section id="photo-well">
     
-</section>
+<div id="wrapper">
+    <h1>flickr memory</h1>
+    
+    <section id="photo-well"></section> <!-- #photo-well -->
+    
+    <section id="score-card">
+        <h2>score</h2>
+        <div id="tally"></div>
+    </section>
+    
+    <section id="gallery-selector">
+        <h2>galleries</h2>
+        <ul>
+            <li>idaho</li>
+            <li>boston</li>
+        </ul>
+    </section>
+    
+</div> <!-- #wrapper -->
 
 <!--
 Scripts
 -->
-<script>
-
-$(document).ready(function()
-{
-    // get the gallery ID
-    $.ajax
-    ({
-        url: "http://api.flickr.com/services/rest/?method=flickr.urls.lookupGallery&api_key=8997c537cd1ff627d69d2c70b4ef9246&url=http://www.flickr.com/photos/taylorkearns/galleries/72157625863370830&format=json&jsoncallback=?",
-        dataType: "json",
-        success: function(data)
-        {
-            console.log(data.gallery);
-            
-            var gallery_id = data.gallery.id;
-            
-            // get the photos from the gallery using the ID from above
-            $.ajax
-            ({
-                url: "http://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=8997c537cd1ff627d69d2c70b4ef9246&gallery_id="+gallery_id+"&format=json&jsoncallback=?",    
-                dataType: "json",
-                success: function(data)
-                {
-                    console.log(data.photos);
-                    
-                    var deck = [];
-                    var all_photos = data.photos.photo;
-                    
-                    $.each(all_photos, function(key, value)
-                    {
-                        if(key == "id")
-                        {
-                            console.log(value);                               
-                        }
-                    });
-                }
-            });
-        }
-    });
-});
-
-</script>
+<script src="/js/core.js"></script>
 
 </body>
 </html>
