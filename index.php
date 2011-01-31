@@ -26,7 +26,7 @@
     
     <section id="gallery-selector">
         <h2>galleries</h2>
-        <p>select a gallery from the list, or enter any <a href="http://www.flickr.com/galleries/" target="_blank">flickr gallery</a> URL into the field below.</p>
+        <p>click on a gallery in the list below, or enter any <a href="http://www.flickr.com/galleries/" target="_blank">flickr gallery</a> URL into the input field.</p>
         <form id="custom-gallery">
             <input type="text" id="url" placeholder="gallery URL" />
             <input type="submit" class="button" value="go" />

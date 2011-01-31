@@ -34,13 +34,17 @@ div#wrapper { margin: 30px; width: 800px; }
 
 h1 { text-indent: -999em; background: url(/images/heading-flickr-memory.png) no-repeat; width: 428px; height: 69px; }
 
-section#photo-well { float: left; width: 480px; margin-top: 20px; }
+section#photo-well { float: left; width: 480px; height: 480px; margin-top: 20px; position: relative; }
+
+    #photo-well.ajaxing { background: url(/images/ajax-loader.gif) center center no-repeat; }
 
 #photo-well div.tile { width: 75px; height: 75px; overflow: hidden; position: relative; float: left; margin:0 5px 5px 0; }
 
     #photo-well div.tile img { position: absolute; z-index: 1; }
 
 #photo-well div.mask { position: absolute; z-index: 2; width: 75px; height: 75px; background: #ccc; left: 0; top: 0; }
+
+#photo-well img.ajax-loader { position: absolute; left: 0px; top: 0px; z-index: 3; }
 
 section#score-card { width: 280px; height: 200px; margin: 20px 0 0 500px; -webkit-box-shadow: 3px 3px 5px #ccc; -moz-box-shadow: 3px 3px 5px #ccc; box-shadow: 3px 3px 5px #ccc; text-align: center; }
 

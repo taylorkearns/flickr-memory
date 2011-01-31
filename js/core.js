@@ -142,6 +142,9 @@ $(document).ready(function()
         setupTiles(gallery_url);
         return false;
     });
+    
+    // loading gif
+    $("#photo-well").ajaxStart(function(){ $(this).addClass("ajaxing"); }).ajaxStop(function(){ $(this).removeClass("ajaxing"); });
 });
 
 
