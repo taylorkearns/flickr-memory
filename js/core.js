@@ -50,21 +50,14 @@ function revealImage()
 
 
 
-/* ==================================================
-On ready
-================================================== */
-
-$(document).ready(function()
+function setupTiles(gallery)
 {
-    
-    /* ==================================================
-    Flickr / ajax 
-    ================================================== */
+    $("#photo-well").empty();
     
     // get the gallery ID
     $.ajax
     ({
-        url: "http://api.flickr.com/services/rest/?method=flickr.urls.lookupGallery&api_key=8997c537cd1ff627d69d2c70b4ef9246&url=http://www.flickr.com/photos/taylorkearns/galleries/72157625863370830&format=json&jsoncallback=?",
+        url: "http://api.flickr.com/services/rest/?method=flickr.urls.lookupGallery&api_key=8997c537cd1ff627d69d2c70b4ef9246&url="+gallery+"&format=json&jsoncallback=?",
         dataType: "json",
         success: function(data)
         {
@@ -110,17 +103,45 @@ $(document).ready(function()
             });
         }
     });
-    
-    
-    
-    /* ==================================================
-    Page functionality
-    ================================================== */
-    
+}
+
+
+
+/* ==================================================
+On ready
+================================================== */
+
+$(document).ready(function()
+{
+    // load first gallery in the list
+    var first_gallery = $("#gallery-selector li:first");
+    setupTiles(first_gallery.addClass("selected").find("a").attr("href"));
     $("#tally").text(score);
     
+    // reveal tile image on click
     $("div.tile").live("click", revealImage);
-        
+    
+    // gallery selector
+    $("#gallery-selector li > a")
+    .hover(function(){ $(this).css("cursor", "pointer"); })
+    .click(function()
+    {
+        $("#gallery-selector li").removeClass("selected");
+        $(this).parent("li").addClass("selected");
+        var gallery = this.href;
+        setupTiles(gallery);
+        return false;
+    });
+    
+    // gallery input form
+    $("#custom-gallery").submit(function()
+    {
+        var gallery_url = $("input#url").val();
+        if(gallery_url.indexOf("http://") == -1){ gallery_url = "http://"+gallery_url; }
+        if(gallery_url.search(/\/$/) > -1){ gallery_url.replace(/\/+$/, ""); }
+        setupTiles(gallery_url);
+        return false;
+    });
 });
 
 

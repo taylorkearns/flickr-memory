@@ -26,9 +26,15 @@
     
     <section id="gallery-selector">
         <h2>galleries</h2>
+        <p>select a gallery from the list, or enter any <a href="http://www.flickr.com/galleries/" target="_blank">flickr gallery</a> URL into the field below.</p>
+        <form id="custom-gallery">
+            <input type="text" id="url" placeholder="gallery URL" />
+            <input type="submit" class="button" value="go" />
+        </form>
         <ul>
-            <li>idaho</li>
-            <li>boston</li>
+            <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625863370830">idaho</a></li>
+            <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625942950676">los angeles</a></li>
+            <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625941911836">boston</a></li>
         </ul>
     </section>
     
