@@ -38,12 +38,23 @@ function revealImage()
         else
         {
             $("div.mask:not(.permanent)").delay(1000).show(100);
-            score ++;
-            $("#tally").text(score);
+            if($("#photo-well div.tile").length != $("#photo-well div.permanent").length)
+            {
+                score ++;
+                $("#tally").text(score);
+            }    
         }
         
         images_showing = 0;
-    }    
+    }
+    
+    // end of game
+    if($("#photo-well div.tile").length == $("#photo-well div.permanent").length)
+    {
+        $("#score-card").addClass("completed");
+        $("#tally").text("Done!").animate({ opacity: "0" }, 1000);
+        setTimeout(function(){ $("#tally").text(score).animate({ opacity: "1" }, 500); }, 1000);
+    }
     
     return false;
 }
@@ -53,6 +64,10 @@ function revealImage()
 function setupTiles(gallery)
 {
     $("#photo-well").empty();
+    
+    score = 0;
+    $("#tally").text("0");
+    $("#score-card").removeClass("completed");
     
     // get the gallery ID
     $.ajax

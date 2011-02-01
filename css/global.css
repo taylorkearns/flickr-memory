@@ -46,8 +46,10 @@ section#photo-well { float: left; width: 480px; height: 480px; margin-top: 20px;
 
 #photo-well img.ajax-loader { position: absolute; left: 0px; top: 0px; z-index: 3; }
 
-section#score-card { width: 280px; height: 200px; margin: 20px 0 0 500px; -webkit-box-shadow: 3px 3px 5px #ccc; -moz-box-shadow: 3px 3px 5px #ccc; box-shadow: 3px 3px 5px #ccc; text-align: center; }
+section#score-card { width: 280px; height: 200px; margin: 20px 0 0 500px; -webkit-box-shadow: 3px 3px 10px #ccc; -moz-box-shadow: 3px 3px 10px #ccc; box-shadow: 3px 3px 10px #ccc; text-align: center; }
 
+    #score-card.completed { -webkit-box-shadow: 3px 3px 20px 5px #a68e46; -moz-box-shadow: 3px 3px 20px 5px #a68e46; box-shadow: 3px 3px 20px 5px #a68e46; }
+    
     #score-card h2 { font-size: 60px; color: #96907c; }
 
 div#tally { font-size: 70px; color: #a68e46; margin-top: 20px; }

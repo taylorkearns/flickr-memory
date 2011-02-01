@@ -26,15 +26,16 @@
     
     <section id="gallery-selector">
         <h2>galleries</h2>
-        <p>click on a gallery in the list below, or enter any <a href="http://www.flickr.com/galleries/" target="_blank">flickr gallery</a> URL into the input field.</p>
+        <p>Click on a gallery in the list below, or enter any <a href="http://www.flickr.com/galleries/" target="_blank">Flickr gallery</a> URL into the input field.  Better yet, create your own gallery and enter that URL!</p>
         <form id="custom-gallery">
-            <input type="text" id="url" placeholder="gallery URL" />
+            <input type="text" id="url" placeholder="enter gallery URL" />
             <input type="submit" class="button" value="go" />
         </form>
         <ul>
             <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625863370830">idaho</a></li>
             <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625942950676">los angeles</a></li>
             <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625941911836">boston</a></li>
+            <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625824131273/">tester</a></li>
         </ul>
     </section>
     
