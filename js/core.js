@@ -1,6 +1,7 @@
 /* ==================================================
 Global variables
 ================================================== */
+var current_gallery;
 var images_showing = 0;
 var score = 0;
 
@@ -9,7 +10,6 @@ var score = 0;
 /* ==================================================
 Functions
 ================================================== */
-
 function isMatch()
 {
     var revealed = $("img.revealed");
@@ -122,14 +122,24 @@ function setupTiles(gallery)
 
 
 
+function inputIsValid()
+{
+    return true;
+}
+
+
+
 /* ==================================================
 On ready
 ================================================== */
 
 $(document).ready(function()
 {
+    
     // load first gallery in the list
     var first_gallery = $("#gallery-selector li:first");
+    current_gallery = first_gallery.find("a").attr("href");
+    
     setupTiles(first_gallery.addClass("selected").find("a").attr("href"));
     $("#tally").text(score);
     
@@ -144,6 +154,7 @@ $(document).ready(function()
         $("#gallery-selector li").removeClass("selected");
         $(this).parent("li").addClass("selected");
         var gallery = this.href;
+        current_gallery = gallery;
         setupTiles(gallery);
         return false;
     });
@@ -155,11 +166,35 @@ $(document).ready(function()
         if(gallery_url.indexOf("http://") == -1){ gallery_url = "http://"+gallery_url; }
         if(gallery_url.search(/\/$/) > -1){ gallery_url.replace(/\/+$/, ""); }
         setupTiles(gallery_url);
+        current_gallery = gallery_url;
         return false;
     });
     
     // loading gif
     $("#photo-well").ajaxStart(function(){ $(this).addClass("ajaxing"); }).ajaxStop(function(){ $(this).removeClass("ajaxing"); });
+    
+    // user score submission
+    $("#user-scores").submit(function(event)
+    {
+        event.preventDefault();
+        
+        if(inputIsValid())
+        {
+            var game_data = {};
+            game_data.player_name = $("#player_name").val();
+            game_data.player_score = score;
+            game_data.gallery_url = current_gallery;
+            
+            $.ajax
+            ({
+                url: "services/user-scores.php",
+                type: "POST",
+                data: game_data,
+                dataType: "json"
+            });
+        }
+    });
+    
 });
 
 

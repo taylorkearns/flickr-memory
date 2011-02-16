@@ -28,7 +28,7 @@ input, select { vertical-align: middle; }
 Main styles
 ================================================== */
 
-body { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+body { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; color: #96907c; }
 
 div#wrapper { margin: 30px; width: 800px; }
 
@@ -50,21 +50,21 @@ section#score-card { width: 280px; height: 200px; margin: 20px 0 0 500px; -webki
 
     #score-card.completed { -webkit-box-shadow: 3px 3px 20px 5px #a68e46; -moz-box-shadow: 3px 3px 20px 5px #a68e46; box-shadow: 3px 3px 20px 5px #a68e46; }
     
-    #score-card h2 { font-size: 60px; color: #96907c; }
+    #score-card h2 { font-size: 60px; }
 
 div#tally { font-size: 70px; color: #a68e46; margin-top: 20px; }
 
 section#gallery-selector { margin: 30px 0 0 500px; }
 
-    #gallery-selector h2 { font-size: 30px; color: #96907c; margin-bottom: 5px; }
+    #gallery-selector h2 { font-size: 30px; margin-bottom: 5px; }
     
-    #gallery-selector p { color: #96907c; font-size: 12px; }
+    #gallery-selector p { font-size: 12px; }
     
     #gallery-selector a { color: #a68e46; }
 
         #gallery-selector a:hover { text-decoration: underline; }
 
-form#custom-gallery input { margin-top: 20px; width: 200px; color: #96907c; font-size: 10px; }
+form#custom-gallery input { margin-top: 20px; width: 200px; font-size: 10px; }
 
     #custom-gallery input.button { width: 40px; }
 
@@ -74,3 +74,5 @@ form#custom-gallery input { margin-top: 20px; width: 200px; color: #96907c; font
 
     #gallery-selector li.selected,
     #gallery-selector li.selected a { color: #4848a6; }
+    
+div#user-scores-entry { clear: both; }    

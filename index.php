@@ -22,7 +22,7 @@
     <section id="score-card">
         <h2>score</h2>
         <div id="tally"></div>
-    </section>
+    </section> <!-- #score-card -->
     
     <section id="gallery-selector">
         <h2>galleries</h2>
@@ -35,9 +35,18 @@
             <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625863370830">idaho</a></li>
             <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625942950676">los angeles</a></li>
             <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625941911836">boston</a></li>
-            <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625824131273/">tester</a></li>
         </ul>
-    </section>
+    </section> <!-- #gallery-selector -->
+    
+    <div id="user-scores-entry">
+        <p>Nice work! You've made the high score board.</p>
+        <form id="user-scores" action="#" method="post">
+            <label for="player_name">name:</label>
+            <input type="text" id="player_name" />
+            <br />
+            <input type="submit" value="post" />
+        </form>
+    </div> <!-- #user-scores-entry -->
     
 </div> <!-- #wrapper -->
 
