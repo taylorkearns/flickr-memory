@@ -24,6 +24,10 @@
         <div id="tally"></div>
     </section> <!-- #score-card -->
     
+    <section id="scoreboard">
+        <h2>scoreboard</h2>
+    </section> <!-- #scoreboard -->
+
     <section id="gallery-selector">
         <h2>galleries</h2>
         <p>Click on a gallery in the list below, or enter any <a href="http://www.flickr.com/galleries/" target="_blank">Flickr gallery</a> URL into the input field.  Better yet, create your own gallery and enter that URL!</p>
@@ -39,12 +43,14 @@
     </section> <!-- #gallery-selector -->
     
     <div id="user-scores-entry">
-        <p>Nice work! You've made the high score board.</p>
+        <p>Nice work! Enter your name to be added to the scoreboard.</p>
         <form id="user-scores" action="#" method="post">
-            <label for="player_name">name:</label>
-            <input type="text" id="player_name" />
             <br />
-            <input type="submit" value="post" />
+            <label for="player_name">name:</label>
+            <input type="text" id="player_name" disabled="disabled" />
+            <br /><br />
+            <input type="submit" id="score-submit" value="post my score" />
+            <input type="button" id="score-cancel" value="no thanks" />
         </form>
     </div> <!-- #user-scores-entry -->
     

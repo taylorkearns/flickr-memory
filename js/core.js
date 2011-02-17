@@ -143,6 +143,14 @@ $(document).ready(function()
     setupTiles(first_gallery.addClass("selected").find("a").attr("href"));
     $("#tally").text(score);
     
+    // get scores
+    $.ajax(
+    {
+        url: "services/get-scores.php",
+        type: "GET",
+        dataType: "json"
+    });
+    
     // reveal tile image on click
     $("div.tile").live("click", revealImage);
     
@@ -190,7 +198,15 @@ $(document).ready(function()
                 url: "services/user-scores.php",
                 type: "POST",
                 data: game_data,
-                dataType: "json"
+                dataType: "json",
+				error: function(xhr, status, exception)
+				{
+					console.log("Error: status >>> "+status+" exception >>> "+exception);
+				},
+				complete: function()
+				{
+					// hide the form
+                }
             });
         }
     });
