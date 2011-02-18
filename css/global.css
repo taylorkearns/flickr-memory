@@ -75,7 +75,7 @@ form#custom-gallery input { margin-top: 20px; width: 200px; font-size: 10px; }
     #gallery-selector li.selected,
     #gallery-selector li.selected a { color: #4848a6; }
     
-div#user-scores-entry {  /*display: none;*/ clear: both; position: absolute; left: 90px; top: 165px; width: 300px; height: 150px; background: #fff; z-index: 2; border: 1px solid #a68e46; padding: 10px; -webkit-box-shadow: 3px 3px 10px #a68e46; -moz-box-shadow: 3px 3px 10px #a68e46; box-shadow: 3px 3px 10px #a68e46; }    
+div#user-scores-entry {  display: none; clear: both; position: absolute; left: 90px; top: 165px; width: 300px; height: 150px; background: #fff; z-index: 2; border: 1px solid #a68e46; padding: 10px; -webkit-box-shadow: 3px 3px 10px #a68e46; -moz-box-shadow: 3px 3px 10px #a68e46; box-shadow: 3px 3px 10px #a68e46; }    
 
 input#score-submit,
 input#score-cancel { border: 1px solid #a68e46; color: #a68e46; background: transparent; font-size: 12px; }
@@ -85,4 +85,10 @@ input#score-cancel { border: 1px solid #a68e46; color: #a68e46; background: tran
     
 section#scoreboard { width: 190px; position: absolute; left: 820px; top: 89px; }
 
-    #scoreboard h2 { font-size: 18px; text-align: center; }
+    #scoreboard h2 { font-size: 18px; text-decoration: underline; margin-bottom: 10px; padding-left: 92px; }
+    
+    #scoreboard li { list-style: none; font-size: 12px; width: 190px; height: 20px; line-height: 20px; overflow: hidden; float: left; margin-bottom: 5px; }
+    
+        #scoreboard li span.name { display: block; float: left; width: 134px; text-align: right; padding-right: 5px; border-right: 1px solid; }
+        
+        #scoreboard li span.score { display: block; float: left; width: 45px; padding-left: 5px; }

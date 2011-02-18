@@ -54,6 +54,10 @@ function revealImage()
         $("#score-card").addClass("completed");
         $("#tally").text("Done!").animate({ opacity: "0" }, 1000);
         setTimeout(function(){ $("#tally").text(score).animate({ opacity: "1" }, 500); }, 1000);
+        
+        // display score entry form
+        $("#user-scores-entry").css("display", "block");
+        $("#score-submit").removeAttr("disabled");
     }
     
     return false;
@@ -122,6 +126,19 @@ function setupTiles(gallery)
 
 
 
+function displayScores(data)
+{
+    var list = $('<ul id="scores"></ul>');
+    $.each(data, function(key, value)
+    {
+        item = $('<li><span class="name">'+value.player_name+'</span> <span class="score">'+value.player_score+'</span></li>');
+        list.append(item);
+    });
+    list.appendTo("#scoreboard");
+}
+
+
+
 function inputIsValid()
 {
     return true;
@@ -143,12 +160,13 @@ $(document).ready(function()
     setupTiles(first_gallery.addClass("selected").find("a").attr("href"));
     $("#tally").text(score);
     
-    // get scores
+    // display scores
     $.ajax(
     {
         url: "services/get-scores.php",
         type: "GET",
-        dataType: "json"
+        dataType: "json",
+        success: function(data){ displayScores(data); }
     });
     
     // reveal tile image on click
@@ -189,7 +207,7 @@ $(document).ready(function()
         if(inputIsValid())
         {
             var game_data = {};
-            game_data.player_name = $("#player_name").val();
+            game_data.player_name = $("#player-name").val();
             game_data.player_score = score;
             game_data.gallery_url = current_gallery;
             
@@ -199,16 +217,24 @@ $(document).ready(function()
                 type: "POST",
                 data: game_data,
                 dataType: "json",
-				error: function(xhr, status, exception)
-				{
-					console.log("Error: status >>> "+status+" exception >>> "+exception);
-				},
-				complete: function()
-				{
-					// hide the form
+				error: function(xhr, status, exception){ console.log("Error: status >>> "+status+" exception >>> "+exception); },
+                complete: function()
+                {
+                    $("#player-name").attr("value", "");
+                    $("#score-submit").attr("disabled", "disabled");
+                    $("#user-scores-entry").css("display", "none");
+                    window.location.reload();
                 }
             });
         }
+    });
+    
+    // cancel button
+    $("#score-cancel").click(function()
+    {
+        $("#player-name").attr("value", "");
+        $("#score-submit").attr("disabled", "disabled");
+        $("#user-scores-entry").css("display", "none");        
     });
     
 });

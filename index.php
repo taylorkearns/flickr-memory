@@ -39,6 +39,7 @@
             <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625863370830">idaho</a></li>
             <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625942950676">los angeles</a></li>
             <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625941911836">boston</a></li>
+            <li><a href="http://www.flickr.com/photos/taylorkearns/galleries/72157625824131273">tester</a></li>
         </ul>
     </section> <!-- #gallery-selector -->
     
@@ -46,10 +47,10 @@
         <p>Nice work! Enter your name to be added to the scoreboard.</p>
         <form id="user-scores" action="#" method="post">
             <br />
-            <label for="player_name">name:</label>
-            <input type="text" id="player_name" disabled="disabled" />
+            <label for="player-name">name:</label>
+            <input type="text" id="player-name" value="20 characters max" />
             <br /><br />
-            <input type="submit" id="score-submit" value="post my score" />
+            <input type="submit" id="score-submit" value="post my score" disabled="disabled" />
             <input type="button" id="score-cancel" value="no thanks" />
         </form>
     </div> <!-- #user-scores-entry -->
