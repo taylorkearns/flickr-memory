@@ -56,7 +56,7 @@ function revealImage()
         setTimeout(function(){ $("#tally").text(score).animate({ opacity: "1" }, 500); }, 1000);
         
         // display score entry form
-        $("#user-scores-entry").css("display", "block");
+        $("#user-scores-entry").delay(1000).slideDown(200);
         $("#score-submit").removeAttr("disabled");
     }
     
@@ -138,7 +138,6 @@ function displayScores(data)
 }
 
 
-
 function inputIsValid()
 {
     return true;
@@ -217,7 +216,6 @@ $(document).ready(function()
                 type: "POST",
                 data: game_data,
                 dataType: "json",
-				error: function(xhr, status, exception){ console.log("Error: status >>> "+status+" exception >>> "+exception); },
                 complete: function()
                 {
                     $("#player-name").attr("value", "");

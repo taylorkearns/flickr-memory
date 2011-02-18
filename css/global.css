@@ -14,7 +14,7 @@ blockquote, q { quotes: none; }
 
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
 
-a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; text-decoration: none; }
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
 
     a:active { outline: none; }
 
@@ -31,6 +31,10 @@ Main styles
 body { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; color: #96907c; }
 
 div#wrapper { margin: 30px; width: 800px; position: relative; }
+
+a { color: #a68e46; text-decoration: underline; }
+
+    a:hover { text-decoration: none; }
 
 h1 { text-indent: -999em; background: url(/images/heading-flickr-memory.png) no-repeat; width: 428px; height: 69px; }
 
@@ -62,8 +66,6 @@ section#gallery-selector { margin: 30px 0 0 500px; }
     
     #gallery-selector a { color: #a68e46; }
 
-        #gallery-selector a:hover { text-decoration: underline; }
-
 form#custom-gallery input { margin-top: 20px; width: 200px; font-size: 10px; }
 
     #custom-gallery input.button { width: 40px; }
@@ -72,17 +74,19 @@ form#custom-gallery input { margin-top: 20px; width: 200px; font-size: 10px; }
 
 #gallery-selector li { color: #a68e46; list-style: square inside; margin-bottom: 5px; }
 
+    #gallery-selector li a { text-decoration: none; }
+
     #gallery-selector li.selected,
-    #gallery-selector li.selected a { color: #4848a6; }
+    #gallery-selector li.selected a { color: #8787BA; }
     
-div#user-scores-entry {  display: none; clear: both; position: absolute; left: 90px; top: 165px; width: 300px; height: 150px; background: #fff; z-index: 2; border: 1px solid #a68e46; padding: 10px; -webkit-box-shadow: 3px 3px 10px #a68e46; -moz-box-shadow: 3px 3px 10px #a68e46; box-shadow: 3px 3px 10px #a68e46; }    
+div#user-scores-entry {  display: none; clear: both; position: absolute; left: 90px; top: 165px; width: 300px; background: #fff; z-index: 2; border: 1px solid #a68e46; padding: 10px; -webkit-box-shadow: 3px 3px 10px #a68e46; -moz-box-shadow: 3px 3px 10px #a68e46; box-shadow: 3px 3px 10px #a68e46; }    
 
 input#score-submit,
 input#score-cancel { border: 1px solid #a68e46; color: #a68e46; background: transparent; font-size: 12px; }
 
     input#score-submit:hover,
     input#score-cancel:hover { color: #fff; background: #a68e46; }
-    
+        
 section#scoreboard { width: 190px; position: absolute; left: 820px; top: 89px; }
 
     #scoreboard h2 { font-size: 18px; text-decoration: underline; margin-bottom: 10px; padding-left: 92px; }

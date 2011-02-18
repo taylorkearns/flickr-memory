@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    
+
 <div id="wrapper">
     <h1>flickr memory</h1>
     
@@ -52,6 +52,8 @@
             <br /><br />
             <input type="submit" id="score-submit" value="post my score" disabled="disabled" />
             <input type="button" id="score-cancel" value="no thanks" />
+            <br /><br />
+            <p style="font-size: 12px;">If you have a great gallery from your city, <a href="mailto:taylor@taylorkearns.com">shoot me a line</a> and I'll consider adding it to the permanent list!</p>
         </form>
     </div> <!-- #user-scores-entry -->
     
