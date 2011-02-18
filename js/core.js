@@ -140,7 +140,11 @@ function displayScores(data)
 
 function inputIsValid()
 {
-    return true;
+    var str = $("#player-name").val();
+    var str = $.trim(str);
+    console.log(str);
+    if(str == ""){ return false; }
+    else{ return true; }
 }
 
 
